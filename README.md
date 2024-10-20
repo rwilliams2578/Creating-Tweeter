@@ -1,8 +1,9 @@
 # Assignment 4 - Creating Tweeter (A Twitter Clone)
 
 ## Author
-
-
+# Revelle Williams
+# CIS 218
+# 10/18/24
 
 ## Description
 
