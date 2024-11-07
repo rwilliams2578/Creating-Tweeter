@@ -133,8 +133,11 @@ https://getbootstrap.com/docs/5.3/getting-started/introduction/
 | **Extra Credit** Full Heroku Deployment     |   **5**|
 
 ## Outside Resources Used
-
+# Textbook
+# Instructor's videos
+# In-class work
 
 
 ## Known Problems, Issues, And/Or Errors in the Program
+# N/A
 
