@@ -2,8 +2,12 @@ from django.db import models
 from django.contrib.auth.models import AbstractUser
 
 
-# Create your models here.
 class Customuser(AbstractUser):
+    """
+    Custom user model that extends Django's AbstractUser.
+    Simply adds a date of birth field.
+    """
+
     date_of_birth = models.DateField(null=True, blank=True)
 
     def __str__(self):
