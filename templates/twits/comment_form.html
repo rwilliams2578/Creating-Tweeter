@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>New Comment</h2>
+
+<!-- Display the original Twit -->
+<div class="card mb-3">
+    <div class="card-body">
+        <div class="d-flex align-items-start mb-2">
+            <img src="https://i.pravatar.cc/60" alt="Profile"
+                 class="me-2" style="width: 60px; height: 60px;">
+            <div>
+                <div class="d-flex align-items-center">
+                    <a href="#" class="text-primary text-decoration-none me-2">{{ twit.author.username }}</a>
+                    <small class="text-muted">{{ twit.created_at|timesince }} ago</small>
+                </div>
+                <p class="mb-2">{{ twit.body }}</p>
+                {% if twit.image_url %}
+                    <img src="{{ twit.image_url }}" class="img-fluid rounded mb-2" alt="Twit image">
+                {% endif %}
+
+                <!-- Existing comments -->
+                {% for comment in twit.comments.all %}
+                    <div class="d-flex mb-2">
+                        <img src="https://i.pravatar.cc/40" alt="Profile"
+                             class="me-2" style="width: 40px; height: 40px;">
+                        <div>
+                            <div class="d-flex align-items-center">
+                                <a href="#" class="text-primary text-decoration-none me-2">{{ comment.author.username }}</a>
+                                <small class="text-muted">{{ comment.created_at|timesince }} ago</small>
+                            </div>
+                            <p class="mb-0">{{ comment.body }}</p>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Add New Comment section -->
+<div class="card">
+    <div class="card-header">
+        <h3>Add New Comment</h3>
+    </div>
+    <div class="card-body">
+        <form method="post">
+            {% csrf_token %}
+            <div class="mb-3">
+                {{ form.body.label_tag }}
+                {{ form.body }}
+                {% if form.body.help_text %}
+                    <small class="form-text text-muted">{{ form.body.help_text }}</small>
+                {% endif %}
+                {% for error in form.body.errors %}
+                    <div class="alert alert-danger">{{ error }}</div>
+                {% endfor %}
+            </div>
+            <button type="submit" class="btn btn-success">Save</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

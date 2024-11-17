@@ -3,6 +3,7 @@ from django.contrib.auth.admin import UserAdmin
 from .models import CustomUser
 
 
+# Add date_of_birth to the fieldsets
 class CustomUserAdmin(UserAdmin):
     """
     Custom admin configuration for CustomUser model.
