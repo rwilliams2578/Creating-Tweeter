@@ -82,9 +82,8 @@ class UserPublicProfileView(ListView):
     context_object_name = "twits"
 
     def get_queryset(self):
-        """
-        Filter twits to show only those by the requested user.
-        """
+        """Filter twits to show only those by the requested user."""
+
         self.profile_user = get_object_or_404(CustomUser, id=self.kwargs["pk"])  # Use CustomUser instead of User
         return Twit.objects.filter(author=self.profile_user).order_by("-created_at")
 
