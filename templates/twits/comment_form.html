@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load crispy_forms_tags %}
 
 {% block content %}
 <h2>New Comment</h2>
@@ -46,16 +47,7 @@
     <div class="card-body">
         <form method="post">
             {% csrf_token %}
-            <div class="mb-3">
-                {{ form.body.label_tag }}
-                {{ form.body }}
-                {% if form.body.help_text %}
-                    <small class="form-text text-muted">{{ form.body.help_text }}</small>
-                {% endif %}
-                {% for error in form.body.errors %}
-                    <div class="alert alert-danger">{{ error }}</div>
-                {% endfor %}
-            </div>
+            {{ form|crispy }}
             <button type="submit" class="btn btn-success">Save</button>
         </form>
     </div>
