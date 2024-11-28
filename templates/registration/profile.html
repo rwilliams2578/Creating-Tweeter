@@ -1,11 +1,18 @@
+"""
+Name: Revelle Williams
+Class: CIS 218
+Date: November 28, 2024
+"""
+
 {% extends 'base.html' %}
+{% load crispy_forms_tags %}
 
 {% block content %}
 <div class="container mt-4">
     <h2>Change Your Profile</h2>
     <form method="post">
         {% csrf_token %}
-        {{ form.as_p }}
+        {{ form|crispy }}
         <button type="submit" class="btn btn-success">Update</button>
         <a href="{% url 'password_change' %}" class="btn btn-primary">Change Password</a>
     </form>

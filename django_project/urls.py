@@ -1,4 +1,10 @@
 """
+Name: Revelle Williams
+Class: CIS 218
+Date: November 28, 2024
+"""
+
+"""
 URL configuration for django_project project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:

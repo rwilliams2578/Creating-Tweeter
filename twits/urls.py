@@ -1,3 +1,9 @@
+"""
+Name: Revelle Williams
+Class: CIS 218
+Date: November 28, 2024
+"""
+
 from django.urls import path
 from . import views
 

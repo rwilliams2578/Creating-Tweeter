@@ -1,3 +1,9 @@
+"""
+Name: Revelle Williams
+Class: CIS 218
+Date: November 28, 2024
+"""
+
 {% extends 'base.html' %}
 
 {% block content %}
@@ -15,7 +21,7 @@
         <div class="card-body">
             <div class="d-flex align-items-start mb-2">
                 <!-- Placeholder profile image -->
-                <img src="https://i.pravatar.cc/60" alt="Profile" 
+                <img src="https://i.pravatar.cc/60" alt="Profile"
                      class="me-2" style="width: 60px; height: 60px;">
                 <div>
                     <div class="d-flex align-items-center">
@@ -34,7 +40,7 @@
                       <a href="{% url 'comment_new' twit.pk %}" class="btn btn-link btn-sm text-decoration-none p-0 me-3">
                         <i class="bi bi-chat"></i> Comment
                     </a>
-                      <button class="btn btn-link btn-sm text-decoration-none p-0 like-button" 
+                      <button class="btn btn-link btn-sm text-decoration-none p-0 like-button"
                               data-twit-id="{{ twit.pk }}">
                           <i class="bi bi-heart"></i>
                           <span class="likes-count">{{ twit.likes.count }}</span> Likes

@@ -1,3 +1,10 @@
+"""
+Name: Revelle Williams
+Class: CIS 218
+Date: November 28, 2024
+"""
+
+
 def likes_context(request):
     """
     Adds like status information to template context.

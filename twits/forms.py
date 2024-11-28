@@ -1,3 +1,9 @@
+"""
+Name: Revelle Williams
+Class: CIS 218
+Date: November 28, 2024
+"""
+
 from django import forms
 from .models import Twit
 from .models import Comment
